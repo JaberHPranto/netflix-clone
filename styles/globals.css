@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* For elements like header,body,links */
+@layer base {
+  body {
+    @apply bg-[#141414] text-white;
+  }
+  header {
+    @apply flex items-center justify-between w-full px-4 py-4 lg:px-10 lg:py-6 fixed top-0 z-50 transition-all delay-300;
+  }
+}
+
+/* For custom classNames of custom component */
+@layer components {
+  .headerLink {
+    @apply text-[#e5e5e5] cursor-pointer text-sm font-light transition-all duration-[0.4s] hover:text-[#b3b3b3];
+  }
+  .bannerButton {
+    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+  }
+}
