@@ -18,7 +18,7 @@ function Banner({ netflixOriginals }: Props) {
   }, [netflixOriginals]);
 
   if (!movie) {
-    return "...loading";
+    return <h2>Loading...</h2>;
   }
 
   return (
