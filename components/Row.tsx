@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Movie } from "types";
 import Thumbnail from "./Thumbnail";
@@ -13,7 +13,7 @@ function Row({ title, movies }: Props) {
   const handleMove = (direction: string) => {
     setIsMoved(true);
     if (rowRef.current) {
-      const { scrollLeft, clientWidth, scrollTop } = rowRef.current;
+      const { scrollLeft, clientWidth } = rowRef.current;
       const scrollTo =
         direction === "left"
           ? scrollLeft - clientWidth
