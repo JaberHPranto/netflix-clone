@@ -1,8 +1,10 @@
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import useAuth from "hooks/useAuth";
+import { useEffect, useState } from "react";
 import { FiBell, FiSearch } from "react-icons/fi";
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,13 +40,14 @@ function Header() {
         <FiSearch className="hidden w-6 h-6 sm:inline-block" />
         <p className="hidden lg:inline-block">Kids</p>
         <FiBell className="w-6 h-6" />
-        <Link href="/accounts">
-          <img
-            src="https://rb.gy/g1pwyx"
-            alt=""
-            className="cursor-pointer rounded"
-          />
-        </Link>
+        {/* <Link href="/accounts"> */}
+        <img
+          onClick={logout}
+          src="https://rb.gy/g1pwyx"
+          alt=""
+          className="cursor-pointer rounded"
+        />
+        {/* </Link> */}
       </div>
     </header>
   );
